@@ -5,7 +5,7 @@ export default function VideoSection() {
     const [showModal, setShowModal] = useState(false);
 
     // Example YouTube embed link. Change src as needed.
-    const videoUrl = "https://www.youtube.com/embed/dQw4w9WgXcQ";
+    const videoUrl = "https://www.youtube.com/watch?v=hq3w9FRmazo";
 
     return (
         <section className="relative min-h-[500px] flex items-center justify-start w-full overflow-hidden">
