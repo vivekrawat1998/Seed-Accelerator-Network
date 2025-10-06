@@ -2,8 +2,7 @@ import React from "react";
 
 // Dummy media image URLs, replace with your files
 const mainImg = '/SAM_3.JPG';
-const badgeImg = '/images/san-badge.png';
-const secondaryImg = '/images/san-crop.jpg';
+
 
 const AboutSection = () => (
   <section className=" container mx-auto py-10 md:py-20 px-4 flex flex-col md:flex-row items-center justify-center bg-white">
@@ -13,22 +12,9 @@ const AboutSection = () => (
       <div className="w-full h-[400px] rounded-xl overflow-hidden shadow-md">
         <img src={mainImg} alt="SAN Farmer" className="object-cover w-full h-full" />
       </div>
-      {/* Experience badge overlay */}
-      {/* <div className="absolute top-8 left-0 bg-green-700 text-white px-7 py-7 rounded-bl-xl rounded-tr-xl flex flex-col items-center shadow-lg"
-        style={{ minWidth: 150 }}>
-        <img src={badgeImg} alt="5 Years Experience" className="w-12 mb-2" />
-        <div className="font-semibold text-lg">5 Years</div>
-        <div className="text-xs font-medium">Working Experience</div>
-      </div> */}
-      {/* Corner yellow border accent */}
+     
       <div className="absolute top-[85px] right-[-10px] w-1 h-28 bg-yellow-400 rounded-xl"></div>
-      {/* Small video/side crop image + play button overlayed bottom right */}
-      {/* <div className="absolute bottom-[-10px] left-[260px] w-32 h-32 rounded-xl overflow-hidden shadow-lg border-4 border-white">
-        <img src={secondaryImg} alt="SAN Crop" className="object-cover w-full h-full" />
-        <button className="absolute top-0 left-0 w-full h-full flex items-center justify-center bg-black bg-opacity-20">
-          <span className="bg-yellow-400 rounded-full w-9 h-9 flex items-center justify-center text-white font-bold shadow-lg">▶</span>
-        </button>
-      </div> */}
+      
     </div>
 
     {/* Right Text Block */}
