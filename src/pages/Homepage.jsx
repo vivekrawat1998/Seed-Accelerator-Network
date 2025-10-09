@@ -7,8 +7,7 @@ import BlogSection from '../components/BlogSection'
 import CountupSection from '../components/CountupSection'
 import WhyChooseUs from '../components/Whychooseus'
 import OurWork from '../components/Ourwork'
-import VideoSection from '../components/Videosection'
-import FaqSection from '../components/FAqsection'
+
 import ContactSection from '../components/ContactSection'
 import RiceSections from '../components/Swipersection'
 import BeforeAfterSection from '../components/BeforeAndAftersection'
@@ -22,8 +21,6 @@ const Homepage = () => {
             <OurWork />
             <WhyChooseUs />
             <CountupSection />
-            <VideoSection />
-            <FaqSection />
             <BlogSection />
             <ContactSection />
             {/* <ServicesSection />

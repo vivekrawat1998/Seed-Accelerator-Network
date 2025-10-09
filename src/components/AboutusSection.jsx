@@ -38,11 +38,8 @@ const AboutSection = () => (
       {/* Features */}
       <div className="mb-5">
         <div className="flex flex-row items-center mb-4">
-          <div className="bg-green-100 p-4 rounded-full mr-5 flex items-center justify-center">
-            <svg width={32} height={32} fill="currentColor" className="text-green-700">
-              <circle cx="16" cy="16" r="16" fill="#D1FAE5" />
-              <path d="M10 16l4 4 8-8" stroke="#065F46" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
+          <div className="bg-green-100 p-2 rounded-full mr-5 flex items-center justify-center">
+           <img src="/100-percent-removebg-preview.png" className="w-10 h-10 object-contain" />
           </div>
           <div>
             <span className="font-bold text-gray-900 text-lg">100% Quality Product</span>
@@ -53,11 +50,8 @@ const AboutSection = () => (
         </div>
         <hr className="my-4" />
         <div className="flex flex-row items-center mb-3">
-          <div className="bg-green-100 p-4 rounded-full mr-5 flex items-center justify-center">
-            <svg width={32} height={32} fill="currentColor" className="text-green-700">
-              {/* Lightbulb icon */}
-              <path d="M16 8a6 6 0 0 1 6 6c0 3-3 6-6 6s-6-3-6-6a6 6 0 0 1 6-6zm0 12v2" stroke="#065F46" strokeWidth="2" strokeLinecap="round" />
-            </svg>
+          <div className="bg-green-100 p-2 rounded-full mr-5 flex items-center justify-center">
+            <img src="/light-bulb-removebg-preview.png" alt="" className="w-10 h-10 object-contain" />
           </div>
           <div>
             <span className="font-bold text-gray-900 text-lg">Get Professional Advice</span>
@@ -73,10 +67,7 @@ const AboutSection = () => (
           Discover More
         </a>
         <div className="flex items-center gap-3">
-          <svg width={32} height={32} fill="none" stroke="#065F46" strokeWidth="2" className="font-bold">
-            {/* Phone handle */}
-            <path d="M11 16c2.5 3.5 5.5 3.5 8 0M20 12v2m-8-2v2" stroke="#065F46" strokeWidth="1.5" />
-          </svg>
+          <img src="/phone.png" alt="Phone Icon" className="w-12 h-12 object-contain" />
           <div>
             <span className="block text-gray-900 font-bold text-md">Call us Now</span>
             <span className="block text-gray-800 text-sm">01(232)775–846</span>

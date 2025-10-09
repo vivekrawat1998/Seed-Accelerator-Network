@@ -9,7 +9,7 @@ import React from 'react';
 
 const ProfileSection = ({ bgImage, name, breadcrumbs }) => {
     return (
-        <div className="relative w-full  min-h-[500px] flex items-center justify-center"
+        <div className="relative w-full  min-h-[400px] flex items-center justify-center"
             style={{
                 backgroundImage: `url(${bgImage})`,
                 backgroundSize: 'cover',

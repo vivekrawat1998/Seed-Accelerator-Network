@@ -66,18 +66,18 @@ const CustomPagination = ({ slides, activeIdx, progress, onDotClick }) => (
           type="button"
           aria-label={`Go to slide ${idx + 1}`}
           onClick={() => onDotClick(idx)}
-          className="w-2 h-2 bg-gray-200/90 rounded-full transition-all duration-200 outline-none focus:ring-2 focus:ring-[#F36F25]"
+          className="w-2 h-2 bg-gray-200/90 rounded-full  outline-none focus:ring-2 focus:ring-[#F36F25]"
         />
       ) : (
         <div
           key={idx}
-          className="w-9 h-2 bg-gray-200/90 rounded-full overflow-hidden relative flex items-center transition-all duration-200"
+          className="w-9 h-2 bg-gray-200/90 rounded-full overflow-hidden relative flex items-center "
         >
           <div
             className="absolute left-0 top-0 h-2 bg-[#F36F25] rounded-full"
             style={{
               width: `${progress * 100}%`,
-              transition: "width 0.25s",
+              // transition: "width 0.25s",
             }}
           />
         </div>

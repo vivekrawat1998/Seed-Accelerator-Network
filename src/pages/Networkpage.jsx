@@ -8,8 +8,8 @@ const Networkpage = () => {
         <div>
             <ProfileSection
                 bgImage={profileBg}
-                name="About SAN"
-                breadcrumbs={['Home', 'About']}
+                name="Network Members"
+                breadcrumbs={['Home', 'Network Members']}
             />
             <NetworkMembersPage />
         </div>

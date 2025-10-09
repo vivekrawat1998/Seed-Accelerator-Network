@@ -1,135 +1,94 @@
 import React from "react";
-import { BarChart, Bar, PieChart, Pie, Cell, XAxis, Tooltip, Legend, ResponsiveContainer } from "recharts";
-import NetworkMap from '/our work.png';
+import DashboardStatsSection from "../components/networkpage/Dashboardoverview";
+import NetworkMembersHero from "../components/networkpage/Networkmemberhero";
+import CoolStatsTables from "../components/networkpage/Coolstatstable";
+import RegistrationForm from "../components/networkpage/Registrationform";
+import SeedScalingTerms from "../components/networkpage/Seedterms";
 
-const dashboard = [
-  { label: "Regions Covered (2024)", value: "6" },
-  { label: "Regions Covered (2025)", value: "5" },
-  { label: "Organizations (2024)", value: "47" },
-  { label: "Organizations (2025)", value: "27" },
-  { label: "Seed Varieties (2024)", value: "32" },
-  { label: "Seed Varieties (2025)", value: "22" },
-  { label: "Licensing Facilitated", value: "Yes" },
+const san1Participants = [
+  { id: 1, name: "Dr Avinash Umate", organization: "Assistant Breeder (Paddy), VNR Seeds Pvt. Ltd., Hyderabad, Telangana" },
+  { id: 2, name: "Dr Girija Rani", organization: "Principal Scientist & Head-Plant Breeding, Agricultural Research Station, ANGRAU, Machilipatnam, Andhra Pradesh" },
+  { id: 3, name: "Dr KC Sahoo", organization: "Director (Commercial), National Seeds Corporation, Delhi" },
+  { id: 4, name: "Dr. Moushree Sakar", organization: "Head R&D, GMS Agritech Pvt. Ltd., Kolkata, West Bengal" },
+  { id: 5, name: "Dr. N.P. Mandal", organization: "Principal Scientist-Plant Breeding, ICAR NRRI, CRURRS, Hazaribagh, Jharkhand" },
+  { id: 6, name: "Dr. Saurabh Dixit", organization: "Senior Scientist (Plant Breeder), Crop Research Station, ANDUAT, Masodha, Uttar Pradesh" },
+  { id: 7, name: "Dr. Sunil Naik", organization: "Crop Breeding Lead, Rallis India, Hyderabad, Telangana" },
+  { id: 8, name: "Dr. Surinder Singh Bisht", organization: "Senior Plant Breeder, Bio Seeds Research India, Hyderabad, Telangana" },
+  { id: 9, name: "Dr. T. Srinivas", organization: "Principal Scientist (Rice), Agricultural Research Station, ANGRAU, Bapatla, Andhra Pradesh" },
+  { id: 10, name: "Dr. Umakant Verma", organization: "Project Manager-Rice Breeding, Bapna Seeds Pvt. Ltd., Raipur, Chhattisgarh" },
+  // ...add remaining participants of SAN 1.0
 ];
 
-const regionParticipation = [
-  { name: "North India", value: 38 },
-  { name: "South India", value: 28 },
-  { name: "East India", value: 13 },
-  { name: "West India", value: 4 },
-  { name: "Central India", value: 2 },
-  { name: "Northeast India", value: 5 },
+const san2Participants = [
+  { id: 1, name: "Dr. Pradip Dey", organization: "Director, ICAR ATARI, Kolkata (Zone-V)" },
+  { id: 2, name: "Dr. H.C Bhattacharya", organization: "Scientific Consultant, ICAR ATARI Guwahati, Zone VI" },
+  { id: 3, name: "Dr. Shantanu Kuar Dubey", organization: "Director, ICAR ATARI, Kanpur (Zone-IV)" },
+  { id: 4, name: "Mr. Anuj Kumar Singh", organization: "Consultant, Uttar Pradesh Beej Vikas Nigam, Lucknow" },
+  { id: 5, name: "Mr. Gunjanan Wallung Shyam", organization: "Asst. Branch Manager, Assam Seeds Corporation, Guwahati" },
+  { id: 6, name: "Mr. Aditya Kumar Panda", organization: "DGM, Odisha State Seed Corporation" },
+  { id: 7, name: "Dr. Prafull Lahane", organization: "GM, Quality Control, Mahabeej, Akola" },
+  { id: 8, name: "Mr. Vivek Thakare", organization: "GM, Production, Mahabeej, Akola" },
+  { id: 9, name: "Mr. Shardool Vikram Chaudhari", organization: "Director Production, Jaya seeds, Varanasi" },
+  { id: 10, name: "Mr. Manoj Kumar", organization: "Functional Head, R S Seeds, Varanasi" },
+
 ];
 
-const orgParticipation = [
-  { name: "Private Seed Cos", value: 37 },
-  { name: "Public Institutes", value: 19 },
-  { name: "NGOs", value: 4 },
-  { name: "State Gov Depts", value: 2 },
-  { name: "National/State Org.", value: 9 },
-  { name: "FPO/FPC", value: 20 },
-];
+const NetworkMembersFootprintsPage = () => (
+<div className="bg-white to-slate-100 min-h-screen py-12 px-2 font-sans">
 
-const COLORS_REGION = ['#34D399', '#6EE7B7', '#A7F3D0', '#A3E635', '#22D3EE', '#5EEAD4'];
-const COLORS_ORG = ['#FDE68A', '#BFDBFE', '#F0ABFC', '#FCD34D', '#F472B6', '#6366F1'];
 
-const NetworkMembersPage = () => (
-  <div className="bg-gradient-to-br from-green-50 to-slate-100 min-h-screen py-10 px-4">
-
-    {/* HERO */}
-    <div className="max-w-4xl mx-auto text-center">
-      <h1 className="text-5xl font-extrabold mb-2 bg-gradient-to-r from-green-700 via-green-500 to-emerald-500 text-transparent bg-clip-text">
-        SAN Network Members
-      </h1>
-      <p className="text-xl text-gray-700 mb-6">
-        Spanning India’s diverse ecosystems, fostering innovation through collaboration for resilient seed systems.
-      </p>
-    </div>
-
-    {/* MAP VISUAL */}
-    <div className="flex justify-center my-8">
-      <img
-        src={NetworkMap}
-        alt="SAN Coverage Map"
-        className="rounded-2xl shadow-2xl ring-2 ring-green-100 w-full max-w-[600px]"
-      />
-    </div>
-
-    {/* DASHBOARD */}
-    <section className="max-w-5xl mx-auto mb-12">
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-        {dashboard.map((item, idx) => (
-          <div
-            key={idx}
-            className="bg-white rounded-xl shadow py-8 px-4 flex flex-col items-center hover:-translate-y-2 hover:bg-green-50 transition text-center cursor-default"
-          >
-            <div className="text-4xl font-extrabold text-green-700">{item.value}</div>
-            <div className="text-gray-700 mt-2 text-sm font-medium">{item.label}</div>
-          </div>
-        ))}
+    <NetworkMembersHero />
+    <DashboardStatsSection />
+    <section className="max-w-6xl  mt-10 mx-auto mb-20 bg-white rounded-3xl ">
+      <h2 className="md:text-5xl text-lg mb-10 font-bold text-green-800 mb-6 text-center font-parkinsans tracking-wide">SAN 1.0 Participants (2024)</h2>
+      <div className="overflow-auto max-h-[500px]  rounded-md">
+        <table className="w-full table-auto border-collapse border border-gray-300">
+          <thead className="bg-prime text-white font-parkinsans  sticky top-0">
+            <tr>
+              <th className="border border-gray-300 px-4 py-2 text-left">S.No.</th>
+              <th className="border border-gray-300 px-4 py-2 text-left">Name</th>
+              <th className="border border-gray-300 px-4 py-2 text-left">Organization</th>
+            </tr>
+          </thead>
+          <tbody>
+            {san1Participants.map(({ id, name, organization }) => (
+              <tr key={id} className={`odd:bg-green-50 font-Nunito even:bg-white`}>
+                <td className="border border-gray-300 px-4 py-2">{id}.</td>
+                <td className="border border-gray-300 px-4 py-2">{name}</td>
+                <td className="border border-gray-300 px-4 py-2">{organization}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
     </section>
-
-    {/* PARTICIPATION GRAPHS */}
-    <section className="max-w-5xl mx-auto md:flex gap-8 mb-12 px-3">
-      <div className="flex-1 mb-10 md:mb-0 bg-white rounded-xl shadow p-6">
-        <h2 className="text-2xl font-bold text-green-800 mb-6 flex items-center gap-2">
-          <span className="inline-block w-4 h-4 rounded-full bg-green-400"></span> By Region
-        </h2>
-        <ResponsiveContainer width="100%" height={300}>
-          <BarChart data={regionParticipation} margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
-            <XAxis dataKey="name" stroke="#10B981" />
-            <Tooltip />
-            <Bar dataKey="value" fill="#34D399" />
-          </BarChart>
-        </ResponsiveContainer>
-      </div>
-      <div className="flex-1 mb-10 md:mb-0 bg-white rounded-xl shadow p-6">
-        <h2 className="text-2xl font-bold text-yellow-800 mb-6 flex items-center gap-2">
-          <span className="inline-block w-4 h-4 rounded-full bg-yellow-400"></span> By Organization Type
-        </h2>
-        <ResponsiveContainer width="100%" height={300}>
-          <PieChart>
-            <Pie 
-              data={orgParticipation} 
-              dataKey="value" 
-              nameKey="name" 
-              cx="50%" 
-              cy="50%" 
-              outerRadius={100} 
-              fill="#FCD34D" 
-              label
-            >
-              {orgParticipation.map((entry, index) => (
-                <Cell key={`cell-${index}`} fill={COLORS_ORG[index % COLORS_ORG.length]} />
-              ))}
-            </Pie>
-            <Tooltip />
-            <Legend verticalAlign="bottom" height={36} />
-          </PieChart>
-        </ResponsiveContainer>
+    <section className="max-w-6xl mx-auto mb-20 bg-white rounded-3xl  ">
+      <h2 className="md:text-5xl text-lg font-parkinsans mb-10 font-bold text-green-800 mb-6 text-center tracking-wide">SAN 2.0 Participants (2025)</h2>
+      <div className="overflow-auto max-h-[500px] border border-green-300 rounded-md">
+        <table className="w-full table-auto border-collapse border border-gray-300">
+          <thead className="bg-prime  text-white font-parkinsans sticky top-0">
+            <tr>
+              <th className="border border-gray-300 px-4 py-2 text-left">S.No.</th>
+              <th className="border border-gray-300 px-4 py-2 text-left">Name</th>
+              <th className="border border-gray-300 px-4 py-2 text-left">Organization</th>
+            </tr>
+          </thead>
+          <tbody>
+            {san2Participants.map(({ id, name, organization }) => (
+              <tr key={id} className={`odd:bg-green-50 font-Nunito even:bg-white`}>
+                <td className="border border-gray-300 px-4 py-2">{id}.</td>
+                <td className="border border-gray-300 px-4 py-2">{name}</td>
+                <td className="border border-gray-300 px-4 py-2">{organization}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
     </section>
-
-    {/* FEATURED PARTICIPANTS */}
-    {/* (Keep your existing layout here, optionally improve card styling as above) */}
-
-    {/* TERMS & REGISTRATION */}
-    {/* (Keep your form and terms styling as they are or add additional padding/margins) */}
-
-    {/* CTA */}
-    <div className="text-center mt-16">
-      <h3 className="text-2xl font-bold text-green-800 mb-4">
-        Want to join or partner with SAN?
-      </h3>
-      <a
-        href="/contact"
-        className="inline-block bg-gradient-to-r from-green-500 to-green-700 hover:from-green-700 hover:to-green-900 text-white font-semibold py-3 px-10 rounded-full shadow-lg transition"
-      >
-        Contact Us
-      </a>
-    </div>
+    <CoolStatsTables />
+    <RegistrationForm />
+    <SeedScalingTerms />
   </div>
 );
 
-export default NetworkMembersPage;
+export default NetworkMembersFootprintsPage;

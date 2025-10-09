@@ -7,6 +7,7 @@ import Homepage from './pages/Homepage'
 import Aboutus from './pages/Aboutus'
 import Ourwork from './pages/Ourwork'
 import Networkpage from './pages/Networkpage'
+import Productpage from './pages/Productpage'
 
 
 function App() {
@@ -20,6 +21,8 @@ function App() {
             <Route path='/about' element={<Aboutus />} />
             <Route path='/ourwork' element={<Ourwork />} />
             <Route path='/network-members' element={<Networkpage />} />
+            <Route path='*' element={<h1>404 Not Found</h1>} />
+            <Route path='/product' element={<Productpage />} />
           </Route>
         </Routes>
       </div>

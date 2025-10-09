@@ -1,8 +1,17 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination, Autoplay } from 'swiper/modules';
 import 'swiper/css';
+import 'swiper/css/pagination';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
-// --- SECTION DATA ---
+// --- Color and Style Variables for Professional Look ---
+const ACCENT_COLOR = '#F0B100'; // Muted Blue for a professional feel (replaces bright green)
+const TEXT_COLOR = '#006401';
+const SUBTLE_GREEN = '#a3c9a8'; // Used sparingly for a touch of nature/agriculture
+
+// --- Data remains unchanged ---
 const sections = [
   {
     title: "The Emerging Rice",
@@ -54,103 +63,169 @@ const beforeAfter = [
   },
 ];
 
-// --- BEFORE/AFTER CARD ---
-function BeforeAfterCard({ item }) {
+
+// --- 1. Refactored BeforeAfterCard to fit the professional grid card design ---
+function BeforeAfterCard({ item, index }) {
   return (
-    <div className="flex flex-col items-center">
-      <div className="flex flex-col md:flex-row gap-3 items-center w-full">
-        <div className="flex-1">
-          <img src={item.before} alt="Before" className="w-full h-64 object-cover rounded-lg" />
-          <p className="text-center mt-2 text-gray-500 font-semibold">Before</p>
+    <div
+      data-aos="fade-up"
+      data-aos-delay={index * 100}
+      className="flex flex-col bg-white rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 border-t-4 border-gray-200 p-4"
+    >
+
+
+      <div className="flex flex-row gap-4 items-center w-full mb-4">
+        {/* Before */}
+        <div className="flex-1 relative rounded-lg overflow-hidden shadow-md">
+          <img
+            src={item.before}
+            alt="Before"
+            className="w-full h-54 object-cover rounded-lg"
+          />
+          <span className="absolute bottom-1 right-2 text-xs font-bold text-white bg-black/50 px-2 py-0.5 rounded-full">
+            Before
+          </span>
         </div>
-        <div className="flex-1">
-          <img src={item.after} alt="After" className="w-full h-64 object-cover rounded-lg" />
-          <p className="text-center mt-2 text-gray-500 font-semibold">After</p>
+        {/* After */}
+        <div className="flex-1 relative rounded-lg overflow-hidden shadow-md">
+          <img
+            src={item.after}
+            alt="After"
+            className="w-full h-54 object-cover rounded-lg"
+          />
+          <span className="absolute bottom-1 right-2 text-xs font-bold text-white bg-green-600/70 px-2 py-0.5 rounded-full">
+            After
+          </span>
         </div>
       </div>
-      <h2 className="text-lg md:text-xl font-bold font-parkinsans mt-4 text-[#178650] text-center">{item.title}</h2>
-      <p className="text-sm md:text-base text-gray-700 font-medium text-center mt-2">{item.caption}</p>
+
+      {/* Title */}
+      <h2 style={{ color: ACCENT_COLOR }} className="text-xl md:text-2xl font-extrabold font-parkinsans text-center mt-2 mb-4">
+        {item.title}
+      </h2>
+
+      {/* Caption */}
+      <p className="text-sm md:text-base text-gray-600 font-medium text-center leading-relaxed">
+        {item.caption}
+      </p>
     </div>
   );
 }
 
-// --- FINAL SECTION COMPONENT ---
+// --- 2. Main Component Refactored to Grid Card Layout ---
 export default function RiceSectionsCombined() {
   const [showAll, setShowAll] = useState(false);
 
-  // Build cards list by inserting before/after after the 2nd section
+  // Logic to build the card array, interleaving the before/after section
   let cards = [];
-  if (!showAll) {
-    // Just first two sections + before/after
-    sections.slice(0, 2).forEach((s, i) => {
-      cards.push({ section: s, type: "normal" });
-      if (i === 1) {
-        cards.push({ item: beforeAfter[0], type: "beforeafter" });
-      }
+  const sectionsToRender = showAll ? sections : sections.slice(0, 2); // Showing 3 cards + 1 BA card initially
+
+  sectionsToRender.forEach((s, i) => {
+    cards.push({ section: s, type: 'normal', index: cards.length });
+
+    // Insert the Before/After section after the second normal section (index 1)
+    if (i === 1) {
+      cards.push({ item: beforeAfter[0], type: 'beforeafter', index: cards.length });
+    }
+  });
+
+
+  useEffect(() => {
+    AOS.init({
+      duration: 800,
+      easing: 'ease-out-cubic',
+      once: true,
+      mirror: false,
     });
-  } else {
-    // All sections + before/after after 2nd item
-    sections.forEach((s, i) => {
-      cards.push({ section: s, type: "normal" });
-      if (i === 1) {
-        cards.push({ item: beforeAfter[0], type: "beforeafter" });
-      }
-    });
-  }
+    AOS.refresh();
+  }, [showAll]);
 
   return (
-    <div className="max-w-6xl mx-auto py-12 px-4">
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-14">
-        {cards.map((entry, idx) =>
-          entry.type === "beforeafter" ? (
-            <BeforeAfterCard key={"beforeafter-" + idx} item={entry.item} />
-          ) : (
-            <div key={idx} className="flex flex-col items-center">
-              {/* Single image or swiper gallery */}
-              {entry.section.image && (
-                <img
-                  src={entry.section.image}
-                  alt={entry.section.title}
-                  className="w-full aspect-[16/11] object-cover rounded-2xl mb-4"
-                />
-              )}
-              {entry.section.images && (
-                <Swiper
-                  spaceBetween={16}
-                  slidesPerView={1}
-                  pagination={{ clickable: true }}
-                  style={{
-                    width: '100%',
-                    height: '224px',
-                    borderRadius: '1rem',
-                    marginBottom: '1rem'
-                  }}
-                >
-                  {entry.section.images.map((img, sidx) => (
-                    <SwiperSlide key={sidx}>
-                      <img
-                        src={img}
-                        alt={`${entry.section.title} ${sidx + 1}`}
-                        className="h-56 w-full object-cover rounded-xl mx-auto"
-                        style={{ maxHeight: "224px" }}
-                      />
-                    </SwiperSlide>
-                  ))}
-                </Swiper>
-              )}
-              <h2 className="font-bold text-lg md:text-xl mt-2 text-[#178650] text-center font-parkinsans">{entry.section.title}</h2>
-              <p className="text-sm md:text-base text-gray-700 text-center font-medium font-Nunito mt-2">{entry.section.caption}</p>
-            </div>
-          )
-        )}
+    <div className="min-h-screen bg-gray-100 py-16 px-4">
+      {/* Header */}
+      <header
+
+        className="max-w-4xl mx-auto text-center mb-16" data-aos="fade-down">
+        <h1 style={{ color: TEXT_COLOR }} className="text-2xl md:text-5xl font-parkinsans font-extrabold mb-3">
+          Revoluation in Rice Research
+        </h1>
+
+      </header>
+      {/* Card Grid Container */}
+      <div className="max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
+          {cards.map((entry) =>
+            entry.type === 'beforeafter' ? (
+              <BeforeAfterCard key={'beforeafter-' + entry.index} item={entry.item} index={entry.index} />
+            ) : (
+              // Normal Section Card
+              <div
+                key={entry.index}
+                data-aos="fade-up"
+                data-aos-delay={entry.index * 100}
+                className="flex flex-col bg-white rounded-xl shadow-xl hover:shadow-2xl transition-shadow duration-300 overflow-hidden border-t-4"
+                style={{ borderColor: ACCENT_COLOR }} // Use the blue accent for the border
+              >
+                {/* Image/Swiper Area */}
+                <div className="relative w-full aspect-video overflow-hidden">
+                  {entry.section.image && (
+                    <img
+                      src={entry.section.image}
+                      alt={entry.section.title}
+                      className="w-full h-full object-cover transform transition-transform duration-500 hover:scale-105"
+                    />
+                  )}
+                  {entry.section.images && (
+                    <Swiper
+                      modules={[Pagination, Autoplay]}
+                      spaceBetween={0}
+                      slidesPerView={1}
+                      autoplay={{ delay: 3500, disableOnInteraction: false }}
+                      pagination={{ clickable: true }}
+                      style={{ height: '100%', width: '100%', '--swiper-pagination-color': ACCENT_COLOR }}
+                      className="rounded-t-xl"
+                    >
+                      {entry.section.images.map((img, sidx) => (
+                        <SwiperSlide key={sidx}>
+                          <img
+                            src={img}
+                            alt={`${entry.section.title} ${sidx + 1}`}
+                            className="h-full w-full object-cover"
+                          />
+                        </SwiperSlide>
+                      ))}
+                    </Swiper>
+                  )}
+                  {/* Subtle overlay */}
+                  <div className="absolute inset-0 bg-black/10 pointer-events-none"></div>
+                </div>
+
+                {/* Text Content */}
+                <div className="p-6 flex flex-col flex-grow">
+                  <h2 style={{ color: TEXT_COLOR }} className="font-extrabold font-parkinsans text-xl md:text-2xl mb-3">
+                    {entry.section.title}
+                  </h2>
+                  <p className="text-gray-600 text-sm md:text-base font-Nunito leading-relaxed flex-grow">
+                    {entry.section.caption}
+                  </p>
+
+                </div>
+              </div>
+            )
+          )}
+        </div>
       </div>
+
+      {/* View More Button */}
       {!showAll && (
-        <div className="flex justify-center mt-10">
+        <div className="flex justify-center mt-20">
           <button
             onClick={() => setShowAll(true)}
-            className="bg-[#178650] text-white font-semibold px-8 py-3 rounded-full text-lg hover:bg-[#116e37] transition"
+            data-aos="zoom-in"
+            style={{ backgroundColor: ACCENT_COLOR }}
+            className="text-white font-bold tracking-wider font-parkinsans px-12 py-4 rounded-lg text-lg transition-all shadow-lg hover:shadow-xl hover:opacity-90"
           >
-            View More
+            Show All {sections.length} Initiatives
           </button>
         </div>
       )}
