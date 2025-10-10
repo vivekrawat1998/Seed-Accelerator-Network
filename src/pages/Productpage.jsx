@@ -7,6 +7,7 @@ import MethodologySection from '../components/Productevaluation/Methodologysecti
 import EvaluationPartners from '../components/Productevaluation/Evaluationpartner'
 import StatisticalAnalysisSection from '../components/Productevaluation/Staticsanalysis'
 import ProfileSection from '../components/Profilesection'
+import ProductProfiles from '../components/Productevaluation/ProductProfiles'
 
 const Productpage = () => {
     return (
@@ -14,7 +15,7 @@ const Productpage = () => {
             <ProfileSection bgImage="/handsseeds.png"
                 name="Product Evaluation"
                 breadcrumbs={['Home', 'Product Evaluation']} />
-          
+
             <ProductInfoSection />
             <MarketSegmentsTable />
             <MethodologySection />
@@ -22,6 +23,7 @@ const Productpage = () => {
             <StatisticalAnalysisSection />
             <ProductFilter />
             <FilterPage />
+            <ProductProfiles />     
         </div>
     )
 }

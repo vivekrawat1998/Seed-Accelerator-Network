@@ -39,7 +39,7 @@ const AboutSection = () => (
       <div className="mb-5">
         <div className="flex flex-row items-center mb-4">
           <div className="bg-green-100 p-2 rounded-full mr-5 flex items-center justify-center">
-           <img src="/100-percent-removebg-preview.png" className="w-10 h-10 object-contain" />
+           <img src="/100-percent-removebg-preview.png" className="w-32 md:w-12 h-12 md:object-contain object-cover" />
           </div>
           <div>
             <span className="font-bold text-gray-900 text-lg">100% Quality Product</span>
@@ -51,7 +51,7 @@ const AboutSection = () => (
         <hr className="my-4" />
         <div className="flex flex-row items-center mb-3">
           <div className="bg-green-100 p-2 rounded-full mr-5 flex items-center justify-center">
-            <img src="/light-bulb-removebg-preview.png" alt="" className="w-10 h-10 object-contain" />
+            <img src="/light-bulb-removebg-preview.png" alt="" className="w-24 md:w-12 h-12 md:object-contain object-cover" />
           </div>
           <div>
             <span className="font-bold text-gray-900 text-lg">Get Professional Advice</span>
@@ -63,7 +63,7 @@ const AboutSection = () => (
       </div>
       {/* CTA Button and Contact */}
       <div className="flex flex-row items-center mt-4 gap-6">
-        <a href="#discover" className="bg-green-700 text-white font-semibold px-7 py-3 rounded-lg shadow hover:bg-green-800 transition">
+        <a href="#discover" className="bg-green-700 text-white font-semibold px-4 py-3 md:px-7  md:py-3 rounded-lg shadow hover:bg-green-800 transition">
           Discover More
         </a>
         <div className="flex items-center gap-3">

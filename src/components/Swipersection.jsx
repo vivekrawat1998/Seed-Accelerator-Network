@@ -223,7 +223,7 @@ export default function RiceSectionsCombined() {
             onClick={() => setShowAll(true)}
             data-aos="zoom-in"
             style={{ backgroundColor: ACCENT_COLOR }}
-            className="text-white font-bold tracking-wider font-parkinsans px-12 py-4 rounded-lg text-lg transition-all shadow-lg hover:shadow-xl hover:opacity-90"
+            className="text-white font-bold tracking-wider font-parkinsans px-12 py-4 cursor-pointer rounded-lg text-lg transition-all shadow-lg hover:shadow-xl hover:opacity-90"
           >
             Show All {sections.length} Initiatives
           </button>

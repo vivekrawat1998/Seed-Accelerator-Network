@@ -71,7 +71,7 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  
+
   const chromeClasses = atTop
     ? "bg-prime"
     : "bg-prime backdrop-blur border-b border-white/10 shadow-sm";
@@ -79,7 +79,7 @@ const Navbar = () => {
   return (
     <nav
       className={[
-        "fixed z-50 w-full top-0 h-20 transition-transform duration-300 ease-out",
+        "fixed z-50 w-full px-10 top-0 h-20 transition-transform duration-300 ease-out",
         visible ? "translate-y-0" : "-translate-y-full",
         chromeClasses,
       ].join(" ")}
