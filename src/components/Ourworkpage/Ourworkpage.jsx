@@ -27,7 +27,7 @@ const PinAndYearMarker = ({ year }) => (
   <div className="absolute md:top-0 -top-12 left-1/2 transform -translate-x-1/2 z-20 transition duration-300 group-hover:scale-110">
     <div className="flex flex-col items-center">
       <FaMapMarkerAlt className="text-4xl text-green-700 bg-white rounded-full p-1 shadow-lg border-2 border-green-500" />
-      <span className="mt-1 px-2 py-0.5 bg-green-500 text-white text-xs font-bold rounded-full shadow-md">
+      <span className="mt-1 px-3 py-0.5 bg-green-500 text-white text-lg font-parkinsans font-bold rounded-full shadow-md">
         {year}
       </span>
     </div>
@@ -98,7 +98,37 @@ const OurWorkDownstairsFlow = () => {
       {/* Responsive Timeline Container */}
       <div className="relative max-w-4xl mx-auto">
         {/* Central Vertical Line (Visible on all screens) */}
-        <div className="absolute top-0 left-1/2 dotted transform -translate-x-1/2 h-full w-1 bg-green-300 shadow-inner z-0"></div>
+        {/* <div className="absolute top-0 left-1/2 dotted transform -translate-x-1/2 h-full w-1 bg-green-300 shadow-inner z-0"></div> */}
+        <div className="absolute top-0 left-1/2 transform -translate-x-1/2 h-full w-full pointer-events-none z-0">
+          <svg
+            width="100%"
+            height="100%"
+            viewBox="0 0 100 900"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            style={{ position: 'absolute', left: '50%', transform: 'translateX(-50%)', height: '100%' }}
+            preserveAspectRatio="none"
+          >
+            <path
+              d="
+        M50 0
+        C 80 75, 80 75, 50 150
+        C 20 225, 20 225, 50 300
+        C 80 375, 80 375, 50 450
+        C 20 525, 20 525, 50 600
+        C 80 675, 80 675, 50 750
+        C 20 825, 20 825, 50 900
+      "
+              stroke="#00C951"
+              strokeWidth="2"
+              strokeDasharray="10,12"
+              fill="none"
+            />
+          </svg>
+        </div>
+
+
+
 
         {/* Timeline Items */}
         <div className="flex flex-col space-y-24   relative px-4 md:px-0">
@@ -120,7 +150,7 @@ const OurWorkDownstairsFlow = () => {
           Become a Member
         </h3>
         <a
-          href="/contact"
+          href="/network-members#register"
           className="inline-block bg-green-700 font-Nunito hover:bg-green-800 text-white font-bold text-lg px-12 py-4 rounded-full shadow-xl transition transform hover:scale-105"
         >
           Register Now

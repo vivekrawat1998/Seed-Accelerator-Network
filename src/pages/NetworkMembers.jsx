@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import DashboardStatsSection from "../components/networkpage/Dashboardoverview";
 import NetworkMembersHero from "../components/networkpage/Networkmemberhero";
 import CoolStatsTables from "../components/networkpage/Coolstatstable";
 import RegistrationForm from "../components/networkpage/Registrationform";
 import SeedScalingTerms from "../components/networkpage/Seedterms";
+import { Link, useLocation } from "react-router-dom";
 
 const san1Participants = [
   { id: 1, name: "Dr Avinash Umate", organization: "Assistant Breeder (Paddy), VNR Seeds Pvt. Ltd., Hyderabad, Telangana" },
@@ -33,62 +34,87 @@ const san2Participants = [
 
 ];
 
-const NetworkMembersFootprintsPage = () => (
-<div className="bg-white to-slate-100 min-h-screen py-12 px-2 font-sans">
+const NetworkMembersFootprintsPage = () => {
+
+  const registrationFormRef = useRef(null);
+  const location = useLocation();  // Get current route location
+
+  useEffect(() => {
+    if (location.hash === "#register" && registrationFormRef.current) {
+      // Scroll to RegistrationForm if hash is present
+      registrationFormRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  }, [location]);
+
+  return (
+    <div className="bg-white to-slate-100 min-h-screen py-12 px-2 font-sans">
 
 
-    <NetworkMembersHero />
-    <DashboardStatsSection />
-    <section className="max-w-6xl  mt-10 mx-auto mb-20 bg-white rounded-3xl ">
-      <h2 className="md:text-5xl text-lg mb-10 font-bold text-green-800 mb-6 text-center font-parkinsans tracking-wide">SAN 1.0 Participants (2024)</h2>
-      <div className="overflow-auto max-h-[500px]  rounded-md">
-        <table className="w-full table-auto border-collapse border border-gray-300">
-          <thead className="bg-prime text-white font-parkinsans  sticky top-0">
-            <tr>
-              <th className="border border-gray-300 px-4 py-2 text-left">S.No.</th>
-              <th className="border border-gray-300 px-4 py-2 text-left">Name</th>
-              <th className="border border-gray-300 px-4 py-2 text-left">Organization</th>
-            </tr>
-          </thead>
-          <tbody>
-            {san1Participants.map(({ id, name, organization }) => (
-              <tr key={id} className={`odd:bg-green-50 font-Nunito even:bg-white`}>
-                <td className="border border-gray-300 px-4 py-2">{id}.</td>
-                <td className="border border-gray-300 px-4 py-2">{name}</td>
-                <td className="border border-gray-300 px-4 py-2">{organization}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+      <NetworkMembersHero />
+      <DashboardStatsSection />
+      <div className="grid md:grid-cols-2 grid-cols-1 gap-10 px-10 place-items-center ">
+        <section className="  mt-10 mx-auto mb-20 bg-white rounded-3xl ">
+          <h2 className="md:text-2xl text-lg mb-10 font-bold text-green-800 mb-6 text-center font-parkinsans tracking-wide">Members</h2>
+          <div className="overflow-auto max-h-[500px]  rounded-md">
+            <table className="w-full table-auto border-collapse border border-gray-300">
+              <thead className="bg-prime text-white font-parkinsans  sticky top-0">
+                <tr>
+                  <th className="border border-gray-300 px-4 py-2 text-left">S.No.</th>
+                  <th className="border border-gray-300 px-4 py-2 text-left">Name</th>
+                  <th className="border border-gray-300 px-4 py-2 text-left">Organization</th>
+                </tr>
+              </thead>
+              <tbody>
+                {san1Participants.map(({ id, name, organization }) => (
+                  <tr key={id} className={`odd:bg-green-50 font-Nunito even:bg-white`}>
+                    <td className="border border-gray-300 px-4 py-2">{id}.</td>
+                    <td className="border border-gray-300 px-4 py-2">{name}</td>
+                    <td className="border border-gray-300 px-4 py-2">{organization}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <div className="w-full grid place-items-center mt-10">
+            <Link to="/network-members#register" className="bg-prime rounded-md px-6 py-2 font-parkinsans cursor-pointer hover:bg-prime/90 text-white font-semibold" >Become a Member</Link>
+          </div>
+        </section>
+        <section className=" mb-20 bg-white mt-10 rounded-3xl  ">
+          <h2 className="md:text-2xl text-lg font-parkinsans mb-10 font-bold text-green-800 mb-6 text-center tracking-wide">Breeder </h2>
+          <div className="overflow-auto max-h-[500px] border border-green-300 rounded-md">
+            <table className="w-full table-auto border-collapse border border-gray-300">
+              <thead className="bg-prime  text-white font-parkinsans sticky top-0">
+                <tr>
+                  <th className="border border-gray-300 px-4 py-2 text-left">S.No.</th>
+                  <th className="border border-gray-300 px-4 py-2 text-left">Name</th>
+                  <th className="border border-gray-300 px-4 py-2 text-left">Organization</th>
+                </tr>
+              </thead>
+              <tbody>
+                {san2Participants.map(({ id, name, organization }) => (
+                  <tr key={id} className={`odd:bg-green-50 font-Nunito even:bg-white`}>
+                    <td className="border border-gray-300 px-4 py-2">{id}.</td>
+                    <td className="border border-gray-300 px-4 py-2">{name}</td>
+                    <td className="border border-gray-300 px-4 py-2">{organization}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <div className="w-full grid place-items-center mt-10">
+            <Link to="/network-members#register" className="bg-yellow-400 rounded-md px-6 py-2 font-parkinsans cursor-pointer hover:bg-yellow-700 text-white font-semibold" >Become a Breeder </Link>
+          </div>
+        </section>
       </div>
-    </section>
-    <section className="max-w-6xl mx-auto mb-20 bg-white rounded-3xl  ">
-      <h2 className="md:text-5xl text-lg font-parkinsans mb-10 font-bold text-green-800 mb-6 text-center tracking-wide">SAN 2.0 Participants (2025)</h2>
-      <div className="overflow-auto max-h-[500px] border border-green-300 rounded-md">
-        <table className="w-full table-auto border-collapse border border-gray-300">
-          <thead className="bg-prime  text-white font-parkinsans sticky top-0">
-            <tr>
-              <th className="border border-gray-300 px-4 py-2 text-left">S.No.</th>
-              <th className="border border-gray-300 px-4 py-2 text-left">Name</th>
-              <th className="border border-gray-300 px-4 py-2 text-left">Organization</th>
-            </tr>
-          </thead>
-          <tbody>
-            {san2Participants.map(({ id, name, organization }) => (
-              <tr key={id} className={`odd:bg-green-50 font-Nunito even:bg-white`}>
-                <td className="border border-gray-300 px-4 py-2">{id}.</td>
-                <td className="border border-gray-300 px-4 py-2">{name}</td>
-                <td className="border border-gray-300 px-4 py-2">{organization}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+      <CoolStatsTables />
+      <div ref={registrationFormRef}>
+        <RegistrationForm />
       </div>
-    </section>
-    <CoolStatsTables />
-    <RegistrationForm />
-    <SeedScalingTerms />
-  </div>
-);
+      <SeedScalingTerms />
+    </div>
+  )
+}
+
+
 
 export default NetworkMembersFootprintsPage;

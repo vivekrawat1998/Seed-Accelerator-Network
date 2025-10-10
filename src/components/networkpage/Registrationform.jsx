@@ -68,6 +68,19 @@ const RegistrationForm = () => {
                         <label className="block font-medium text-gray-700 mb-1">Email Address</label>
                         <input type="email" className="w-full border border-green-200 rounded-lg py-2 px-3 bg-slate-50" required />
                     </div>
+                    <div>
+                        <label className="block font-medium text-gray-700 mb-1">Register As</label>
+                        <select
+                            className="w-full border border-green-200 rounded-lg py-2 px-3 bg-slate-50"
+                            required
+                        >
+                            <option className="bg-prime/40 text-white" value="" disabled selected>
+                                Select an option
+                            </option>
+                            <option className="bg-prime text-white" value="member">Member</option>
+                            <option className="bg-prime-text-white hover:bg-prime/70" value="breeder">Breeder</option>
+                        </select>
+                    </div>
                 </fieldset>
 
                 {/* Organization Info */}

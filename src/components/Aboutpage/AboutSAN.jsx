@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
-// Example photo imports (replace with your images or the correct paths where needed)
-import FieldImg from '/field 2.png'; // an example supporting image
-import TeamImg from '/field3.png'; // another image from your attachments
+// Example photo imports (replace with your images or correct paths)
+import FieldImg from '/field 2.png';
+import TeamImg from '/field3.png';
 
 const objectives = [
   "Create a network of all seed scaling and accelerator agencies—public, private, and farmer collectives.",
@@ -15,22 +17,38 @@ const objectives = [
 ];
 
 const AboutSAN = () => {
+  useEffect(() => {
+    AOS.init({ duration: 1000, once: true });
+  }, []);
+
   return (
     <div className="bg-gray-50 min-h-screen text-gray-800">
-   
 
       {/* Background / Story with Image */}
-      <section className="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-8 px-4 py-12">
-        <div className="md:w-1/2 mb-6 md:mb-0">
+      <section
+        className="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-8 px-4 py-12"
+        data-aos="fade-up"
+      >
+        <div
+          className="md:w-1/2 mb-6 md:mb-0"
+          data-aos="fade-right"
+          data-aos-delay="100"
+        >
           <img
             src={FieldImg}
             alt="Rice Field"
             className="rounded-xl shadow-lg w-full max-h-72 object-cover"
           />
         </div>
-        <div className="md:w-1/2">
-          <h2 className="text-2xl md:text-3xl font-semibold font-parkinsans mb-4 text-green-700">Our Story</h2>
-          <p className=" font-Nunito mb-4">
+        <div
+          className="md:w-1/2"
+          data-aos="fade-left"
+          data-aos-delay="200"
+        >
+          <h2 className="text-2xl md:text-3xl font-semibold font-parkinsans mb-4 text-green-700">
+            Our Story
+          </h2>
+          <p className="font-Nunito mb-4">
             India’s rice sector is transforming rapidly, but slow adoption of new, climate-resilient varieties limits progress for millions of farmers. Outdated seeds persist due to low awareness and poor accessibility, especially among smallholders. Bridging this gap is essential for food security, climate resilience, and rural prosperity.
           </p>
           <p>
@@ -40,21 +58,43 @@ const AboutSAN = () => {
       </section>
 
       {/* Objectives with an Image */}
-      <section className="bg-white py-12 shadow-inner">
+      <section
+        className="bg-white py-12 shadow-inner"
+        data-aos="fade-up"
+        data-aos-delay="100"
+      >
         <div className="max-w-5xl mx-auto px-4 flex flex-col md:flex-row gap-8 items-center">
-          <div className="md:w-1/2 order-2 md:order-1">
-            <h2 className="text-2xl md:text-3xl font-semibold font-parkinsans mb-4 text-green-700">Why We Exist</h2>
+          <div
+            className="md:w-1/2 order-2 md:order-1"
+            data-aos="fade-right"
+            data-aos-delay="200"
+          >
+            <h2 className="text-2xl md:text-3xl font-semibold font-parkinsans mb-4 text-green-700">
+              Why We Exist
+            </h2>
             <p className="mb-6">
               Despite many improved rice varieties being released annually, complex bottlenecks mean few reach farmers at scale. SAN exists to unite diverse stakeholders, foster smart partnerships, and use data-driven approaches to strengthen seed delivery, adoption, and positive impacts for farming communities.
             </p>
-            <h3 className="text-xl md:text-2xl font-semibold mb-3 font-parkinsans text-green-800">Our Objectives</h3>
-            <ul className="list-disc pl-6  font-Nunito space-y-2 mb-2">
+            <h3 className="text-xl md:text-2xl font-semibold mb-3 font-parkinsans text-green-800">
+              Our Objectives
+            </h3>
+            <ul className="list-disc pl-6 font-Nunito space-y-2 mb-2">
               {objectives.map((item, idx) => (
-                <li key={idx}>{item}</li>
+                <li
+                  key={idx}
+                  data-aos="fade-up"
+                  data-aos-delay={idx * 100}
+                >
+                  {item}
+                </li>
               ))}
             </ul>
           </div>
-          <div className="md:w-1/2 order-1 md:order-2 mb-8 md:mb-0">
+          <div
+            className="md:w-1/2 order-1 md:order-2 mb-8 md:mb-0"
+            data-aos="fade-left"
+            data-aos-delay="300"
+          >
             <img
               src={TeamImg}
               alt="Team working"
@@ -65,16 +105,24 @@ const AboutSAN = () => {
       </section>
 
       {/* Vision Blockquote */}
-      <section className="py-12 bg-gradient-to-b from-green-50 to-green-100">
+      <section
+        className="py-12 bg-gradient-to-b from-green-50 to-green-100"
+        data-aos="fade-up"
+        data-aos-delay="100"
+      >
         <div className="max-w-2xl mx-auto px-4">
-          <blockquote className="border-l-4  font-Nunito border-green-700 pl-6 italic text-lg text-green-900 font-medium">
+          <blockquote className="border-l-4 font-Nunito border-green-700 pl-6 italic text-lg text-green-900 font-medium">
             “By creating a collaborative seed ecosystem, we empower South Asia’s farming communities to thrive—building resilience, enhancing yields, and securing food futures.”
           </blockquote>
         </div>
       </section>
 
       {/* Call to Action */}
-      <section className="py-10">
+      <section
+        className="py-10"
+        data-aos="fade-up"
+        data-aos-delay="150"
+      >
         <div className="max-w-4xl mx-auto px-4 text-center">
           <h2 className="text-xl md:text-2xl font-parkinsans font-semibold mb-3 text-green-700">
             Join the Movement
@@ -86,10 +134,11 @@ const AboutSAN = () => {
             href="/contact"
             className="inline-block bg-green-700 hover:bg-green-800 text-white font-bold py-3 px-8 rounded-full shadow-lg transition"
           >
-            Contact Us
+            Contact us
           </a>
         </div>
       </section>
+
     </div>
   );
 };

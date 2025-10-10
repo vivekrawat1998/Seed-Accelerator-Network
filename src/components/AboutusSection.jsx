@@ -63,7 +63,7 @@ const AboutSection = () => (
       </div>
       {/* CTA Button and Contact */}
       <div className="flex flex-row items-center mt-4 gap-6">
-        <a href="#discover" className="bg-green-700 text-white font-semibold px-4 py-3 md:px-7  md:py-3 rounded-lg shadow hover:bg-green-800 transition">
+        <a href="/about" className="bg-green-700 text-white font-semibold px-4 py-3 md:px-7  md:py-3 rounded-lg shadow hover:bg-green-800 transition">
           Discover More
         </a>
         <div className="flex items-center gap-3">

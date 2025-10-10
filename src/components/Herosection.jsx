@@ -48,7 +48,7 @@ const HeroSection = () => {
           <br />
           <span className="mt-2 block text-green-200">Empower Farms</span>
         </h1>
-        <p className="mt-6 mb-8 text-lg md:text-xl text-white text-center max-w-2xl shadow-xl rounded-xl px-4 py-2">
+        <p className="mt-6 mb-8 text-lg md:text-xl text-white text-center max-w-2xl  rounded-xl px-4 py-2">
           Revolutionize your farming practice with smart, sustainable, and organic solutions.
         </p>
 
@@ -94,13 +94,13 @@ const HeroSection = () => {
         {/* Original buttons below */}
         <div className="flex gap-3 flex-wrap justify-center mt-6">
           <a
-            href="#discover"
+            href="/ourwork"
             className="bg-green-700 text-white font-semibold px-6 py-3 rounded-xl shadow hover:bg-yellow-700 transition"
           >
             Explore Now
           </a>
           <a
-            href="#about"
+            href="/about"
             className="bg-white text-green-800 font-semibold px-6 py-3 rounded-xl shadow hover:bg-yellow-600 hover:text-white transition border-r-4 border-yellow-500 relative overflow-hidden"
           >
             About Us

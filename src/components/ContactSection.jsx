@@ -1,5 +1,6 @@
 // File: ContactSection.jsx
-import React, { useState } from "react";
+import Aos from "aos";
+import React, { useEffect, useState } from "react";
 
 export default function ContactSection() {
     // Optional: local state for form validation or submission
@@ -13,9 +14,15 @@ export default function ContactSection() {
         alert("Message sent!");
     };
 
+
+    useEffect(() => {
+        Aos.init({ duration: 1000, once: true });
+    }, []);
     return (
         <section className="w-full py-16 bg-white">
-            <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-start gap-10 px-4">
+            <div
+                data-aos="fade-right"
+                className="max-w-7xl mx-auto flex flex-col md:flex-row items-start gap-10 px-4">
                 {/* Left side - Badge + Heading + Image */}
                 <div className="flex-1 w-full">
                     <button className="flex items-center px-4 py-1 mb-6 rounded-full bg-gray-100 text-[#149247] font-semibold shadow-sm hover:bg-green-100 transition w-fit">
@@ -36,8 +43,11 @@ export default function ContactSection() {
                     </div>
                 </div>
                 {/* Right side - Contact Form Card */}
-                <div className="flex-1 w-full ">
+                <div
+
+                    className="flex-1 w-full ">
                     <form
+                        data-aos="fade-left"
                         onSubmit={handleSubmit}
                         className="bg-prime/20 rounded-2xl shadow p-8 space-y-6 w-full"
                     >

@@ -1,6 +1,11 @@
-// File: BlogSection.jsx
-import React from "react";
+import React, { useEffect } from "react";
 import { FaUser, FaCommentDots, FaArrowRight } from "react-icons/fa";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import Aos from "aos";
 
 const blogs = [
     {
@@ -27,12 +32,17 @@ const blogs = [
 ];
 
 export default function BlogSection() {
+        useEffect(() => {
+        Aos.init({ duration: 1000, once: true });
+    }, []);
     return (
         <section className="w-full py-16 bg-white">
             <div className="max-w-7xl mx-auto px-4">
-                {/* Top - Badge and Heading */}
+                {/* Header */}
                 <div className="flex flex-wrap items-center justify-between mb-10 gap-y-4">
-                    <div>
+                    <div
+                        data-aos="fade-up"
+                    >
                         <button className="flex items-center px-4 py-1 mb-4 rounded-full bg-gray-100 text-[#149247] font-medium shadow-sm hover:bg-green-100 transition w-fit">
                             <span className="mr-2">🐝</span>Our Latest Blog
                         </button>
@@ -49,37 +59,51 @@ export default function BlogSection() {
                         </button>
                     </div>
                 </div>
-                {/* Blog Cards */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+                {/* Swiper */}
+                <Swiper
+                    data-aos="fade-up"
+                    data-aos-delay="100"
+                    modules={[Autoplay]}
+                    pagination={{ clickable: true }}
+                    autoplay={{ delay: 5000, disableOnInteraction: false }}
+                    spaceBetween={24}
+                    slidesPerView={1}
+                    breakpoints={{
+                        640: { slidesPerView: 1.7 },
+                        340: { slidesPerView: 1.2 },
+                        768: { slidesPerView: 2 },
+                        1024: { slidesPerView: 3 },
+                    }}
+                >
                     {blogs.map((blog, idx) => (
-                        <div key={idx} className="bg-white rounded-2xl overflow-hidden shadow border border-[#F1F1E8] flex flex-col">
-                            <img
-                                src={blog.image}
-                                alt={blog.title}
-                                className="object-cover w-full h-60"
-                            />
-                            <div className="p-5 flex flex-col flex-1">
-                                {/* Author + Comments */}
-                                <div className="flex text-gray-500 text-sm gap-6 mb-2">
-                                    <div className="flex items-center gap-2">
-                                        <FaUser /> {blog.author}
+                        <SwiperSlide key={idx}>
+                            <div className="bg-white rounded-2xl overflow-hidden shadow border border-[#F1F1E8] flex flex-col h-full">
+                                <img
+                                    src={blog.image}
+                                    alt={blog.title}
+                                    className="object-cover w-full h-60"
+                                />
+                                <div className="p-5 flex flex-col flex-1">
+                                    <div className="flex text-gray-500 text-sm gap-6 mb-2">
+                                        <div className="flex items-center gap-2">
+                                            <FaUser /> {blog.author}
+                                        </div>
+                                        <div className="flex items-center gap-1">
+                                            <FaCommentDots /> {blog.comments}
+                                        </div>
                                     </div>
-                                    <div className="flex items-center gap-1">
-                                        <FaCommentDots /> {blog.comments}
+                                    <h3 className="font-bold text-lg text-[#1b2e1c] mb-4">{blog.title}</h3>
+                                    <div className="mt-auto">
+                                        <button className="bg-[#0d2317] text-white p-3 rounded-full flex items-center justify-center transition hover:bg-[#149247]">
+                                            <FaArrowRight />
+                                        </button>
                                     </div>
-                                </div>
-                                <h3 className="font-bold text-lg text-[#1b2e1c] mb-4">
-                                    {blog.title}
-                                </h3>
-                                <div className="mt-auto">
-                                    <button className="bg-[#0d2317] text-white p-3 rounded-full flex items-center justify-center transition hover:bg-[#149247]">
-                                        <FaArrowRight />
-                                    </button>
                                 </div>
                             </div>
-                        </div>
+                        </SwiperSlide>
                     ))}
-                </div>
+                </Swiper>
             </div>
         </section>
     );

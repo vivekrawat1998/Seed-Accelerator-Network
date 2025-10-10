@@ -79,7 +79,7 @@ const Navbar = () => {
   return (
     <nav
       className={[
-        "fixed z-50 w-full px-10 top-0 h-20 transition-transform duration-300 ease-out",
+        "fixed z-50 w-full md:px-10 top-0 h-20 transition-transform duration-300 ease-out",
         visible ? "translate-y-0" : "-translate-y-full",
         chromeClasses,
       ].join(" ")}

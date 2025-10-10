@@ -70,7 +70,7 @@ function BeforeAfterCard({ item, index }) {
     <div
       data-aos="fade-up"
       data-aos-delay={index * 100}
-      className="flex flex-col bg-white rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 border-t-4 border-gray-200 p-4"
+      className="flex flex-col bg-white rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 border-t-4 border-prime p-4"
     >
 
 
@@ -105,7 +105,7 @@ function BeforeAfterCard({ item, index }) {
       </h2>
 
       {/* Caption */}
-      <p className="text-sm md:text-base text-gray-600 font-medium text-center leading-relaxed">
+      <p className="text-sm md:text-base text-gray-600 font-medium font-Nunito text-center leading-relaxed">
         {item.caption}
       </p>
     </div>
@@ -223,7 +223,7 @@ export default function RiceSectionsCombined() {
             onClick={() => setShowAll(true)}
             data-aos="zoom-in"
             style={{ backgroundColor: ACCENT_COLOR }}
-            className="text-white font-bold tracking-wider font-parkinsans px-12 py-4 cursor-pointer rounded-lg text-lg transition-all shadow-lg hover:shadow-xl hover:opacity-90"
+            className="text-white font-bold tracking-wider font-parkinsans px-12 py-4 rounded-lg text-lg transition-all shadow-lg hover:shadow-xl hover:opacity-90"
           >
             Show All {sections.length} Initiatives
           </button>
