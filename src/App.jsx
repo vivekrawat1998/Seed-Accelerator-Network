@@ -8,6 +8,9 @@ import Aboutus from './pages/Aboutus'
 import Ourwork from './pages/Ourwork'
 import Networkpage from './pages/Networkpage'
 import Productpage from './pages/Productpage'
+import Impactpage from './pages/Impactpage'
+import ResourcesPage from './pages/Resourcepage'
+import ContactPage from './pages/Contactpage'
 
 
 function App() {
@@ -23,6 +26,9 @@ function App() {
             <Route path='/network-members' element={<Networkpage />} />
             <Route path='*' element={<h1>404 Not Found</h1>} />
             <Route path='/product' element={<Productpage />} />
+            <Route path='/impact' element={<Impactpage />} />
+            <Route path='/resource' element={<ResourcesPage />} />
+            <Route path='/contact' element={<ContactPage />} />
           </Route>
         </Routes>
       </div>

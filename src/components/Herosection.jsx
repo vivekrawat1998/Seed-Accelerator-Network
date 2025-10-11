@@ -57,7 +57,7 @@ const HeroSection = () => {
           <button
             onClick={() => swiperRef.current?.slidePrev()}
             aria-label="Previous Slide"
-            className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-[#F0B100] hover:bg-yellow-700 focus:outline-none focus:ring-4 focus:ring-yellow-400 cursor-pointer focus:ring-opacity-70 shadow-lg transition"
+            className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-[#F0B100] hover:bg-prime focus:outline-none focus:ring-4 focus:ring-yellow-400 cursor-pointer focus:ring-opacity-70 shadow-lg transition"
           >
             <svg
               className="w-6 h-6 text-white"
@@ -75,7 +75,7 @@ const HeroSection = () => {
           <button
             onClick={() => swiperRef.current?.slideNext()}
             aria-label="Next Slide"
-            className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-[#F0B100] hover:bg-yellow-700 focus:outline-none focus:ring-4 focus:ring-yellow-400 cursor-pointer focus:ring-opacity-70 shadow-lg transition"
+            className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-prime hover:bg-[#F0B100] focus:outline-none focus:ring-4 focus:ring-yellow-400 cursor-pointer focus:ring-opacity-70 shadow-lg transition"
           >
             <svg
               className="w-6 h-6 text-white"

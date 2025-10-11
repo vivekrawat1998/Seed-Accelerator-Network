@@ -10,8 +10,8 @@ const navLinks = [
   { name: "Member Network", href: "/network-members" },
   { name: "Product Evaluation", href: "product" },
   { name: "Impact", href: "/impact" },
-  { name: "Resources", href: "/Resources" },
-  { name: "Contact us", href: "/contact" },
+  { name: "Resources", href: "/resource" },
+  { name: "Contact Us", href: "/contact" },
 ];
 
 const SocialIcons = () => (
@@ -109,7 +109,7 @@ const Navbar = () => {
         {/* Right - Social Icons and CTA (hide on mobile) */}
         <div className="hidden md:flex items-center space-x-4 h-full">
           {/* <SocialIcons /> */}
-          <button className="ml-4 bg-yellow-500 text-white cursor-pointer font-semibold text-md rounded py-2 px-10 transition-colors hover:bg-green-700">
+          <button className="ml-4 bg-green-500 tracking-wide font-parkinsans text-white cursor-pointer font-semibold text-md rounded py-2 px-10 transition-colors hover:bg-green-700">
             Login
           </button>
         </div>
@@ -152,9 +152,7 @@ const Navbar = () => {
             </Link>
           </li>
         </ul>
-        <div className="flex justify-center py-4 border-t">
-          <SocialIcons />
-        </div>
+
       </div>
     </nav>
   );
