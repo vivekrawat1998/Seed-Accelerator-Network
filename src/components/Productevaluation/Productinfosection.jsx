@@ -21,8 +21,8 @@ const breedingCenters = [
 
 export default function ProductInfoSection() {
   return (
-    <section className="bg-white rounded-lg  p-6 container mx-auto my-10">
-      <h2 className="text-3xl font-bold font-parkinsans text-prime mb-2">
+    <section className="bg-white rounded-lg font-parkinsans  p-6 container mx-auto my-10">
+      <h2 className="text-3xl font-bold  text-prime mb-2">
         Product Evaluation Information and Results
       </h2>
       <h3 className="text-lg font-medium font-Nunito text-gray-700 mb-6">
@@ -39,13 +39,13 @@ export default function ProductInfoSection() {
         <div className="bg-green-50 font-parkinsans border-l-4 border-green-600 text-green-800 rounded-lg p-4 my-4">
           Based on the seeds availability and relevance of the varieties in target market segments and geography, nominations are finalized and put to test under adaptive trials (OFT).
         </div>
-        <p className="text-gray-700 leading-relaxed mb-2">
+        <p className="text-gray-700 font-Nunito leading-relaxed mb-2">
           Through various years of evolution and diverse designs and lay-outs exercised to run these trials, these are popularly known as H2H(Head to Head), TRICOTs (Tradic trials), OFTs (On-farm trials) or adaptive trials.
         </p>
-        <p className="text-gray-700 leading-relaxed mb-2">
+        <p className="text-gray-700 font-Nunito leading-relaxed mb-2">
           These multi-location trials are primarily designed using TRICOT principles, to compare nearly 3-4 new rice varieties with local checks and established benchmarks under the associated market segment. Managed directly by farmers under real-world conditions, adaptive trials provide realistic estimates of genetic gain under farmer managed conditions and capture variability and average productivity in a more significant manner.
         </p>
-        <div className="bg-gray-50 border-l-4 border-gray-400 text-gray-800 rounded-lg p-4 my-4">
+        <div className="bg-gray-50 border-l-4 font-Nunito border-gray-400 text-gray-800 rounded-lg p-4 my-4">
           Results guide in evidence-based decisions on product positioning and scaling of varieties.
         </div>
       </div>

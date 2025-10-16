@@ -3,11 +3,11 @@ import { BiCheckCircle } from "react-icons/bi";
 
 // Update these paths for your images
 const stripTrialImg = "/mythodology.png"; // Main layout diagram
-const trialIconImg = "/trial-icon.png"; // Small illustrative icon/image
+const trialIconImg = "/trails.webp"; // Small illustrative icon/image
 
 export default function MethodologySection() {
   return (
-    <section className="bg-white rounded-lg px-4 py-8 container mx-auto my-10">
+    <section className="bg-white rounded-lg md:px-4 px-3 py-8 container mx-auto my-10">
       <h2 className="text-2xl font-bold text-prime font-parkinsans mb-4">Methodology</h2>
       <p className="mb-3 font-Nunito text-gray-700">
         Each year, breeders and NARES partners nominate new rice varieties for testing across India.
@@ -50,18 +50,18 @@ export default function MethodologySection() {
       </div>
 
       {/* Strip trial layout + small illustrative pic */}
-      <div className="bg-white rounded-lg p-6 mb-6 flex flex-col md:flex-row items-center gap-6">
+      <div className="bg-white rounded-lg md:p-6 mb-6 flex flex-col md:flex-row items-center gap-6">
         {/* Small side image */}
-        <div className="md:w-1/5 flex justify-center">
+        <div className=" flex justify-center">
           <img
             src={trialIconImg}
             alt="Trial Icon"
-            className="w-24 h-24 object-contain rounded-lg shadow-md"
+            className="w-full md:h-[70vh] object-cover rounded-lg shadow-md"
           />
         </div>
 
         {/* Main diagram */}
-        <div className="md:w-4/5 flex flex-col items-center">
+        <div className=" flex flex-col items-center">
           <img
             src={stripTrialImg}
             alt="Layout of strip trial (On Farm Trial)"

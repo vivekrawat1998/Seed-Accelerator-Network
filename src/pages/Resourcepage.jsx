@@ -15,11 +15,11 @@ const resources = [
         url: "/Seed Acclerator Report 2.0 2025.pdf",
     },
     {
-        name: "Product Diary",
+        name: "Product Diary- India",
         url: "/Product Diary Final India.pdf"
     },
     {
-        name: "Key Product Diary Rice",
+        name: "Product Diary- Bangladesh",
         url: "/Key Product Diary Rice (Bangladesh).pdf"
     },
 ];
