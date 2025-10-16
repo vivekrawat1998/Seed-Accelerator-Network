@@ -67,13 +67,13 @@ export default function StatisticalAnalysisSection() {
                     <tbody>
                         {multiYearSummary.map((row) => (
                             <tr key={row.year} className="odd:bg-green-50 even:bg-white">
-                                <td className="px-3 py-2">{row.year}</td>
-                                <td className="px-3 py-2">{row.segments}</td>
-                                <td className="px-3 py-2">{row.states}</td>
-                                <td className="px-3 py-2">{row.trials}</td>
-                                <td className="px-3 py-2">{row.testVarieties}</td>
-                                <td className="px-3 py-2">{row.benchmarkVarieties}</td>
-                                <td className="px-3 py-2">{row.naresPartners}</td>
+                                <td className="px-3 py-2 text-center">{row.year}</td>
+                                <td className="px-3 py-2 text-center">{row.segments}</td>
+                                <td className="px-3 py-2 text-center">{row.states}</td>
+                                <td className="px-3 py-2 text-center">{row.trials}</td>
+                                <td className="px-3 py-2 text-center">{row.testVarieties}</td>
+                                <td className="px-3 py-2 text-center">{row.benchmarkVarieties}</td>
+                                <td className="px-3 py-2 text-center">{row.naresPartners}</td>
                             </tr>
                         ))}
                     </tbody>

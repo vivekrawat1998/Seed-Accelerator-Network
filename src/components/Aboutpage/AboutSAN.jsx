@@ -46,7 +46,7 @@ const AboutSAN = () => {
           data-aos-delay="200"
         >
           <h2 className="text-2xl md:text-3xl font-semibold font-parkinsans mb-4 text-green-700">
-            Our Story
+            Our Journey
           </h2>
           <p className="font-Nunito mb-4">
             India’s rice sector is transforming rapidly, but slow adoption of new, climate-resilient varieties limits progress for millions of farmers. Outdated seeds persist due to low awareness and poor accessibility, especially among smallholders. Bridging this gap is essential for food security, climate resilience, and rural prosperity.
@@ -70,7 +70,7 @@ const AboutSAN = () => {
             data-aos-delay="200"
           >
             <h2 className="text-2xl md:text-3xl font-semibold font-parkinsans mb-4 text-green-700">
-              Why We Exist
+              Core Purpose  
             </h2>
             <p className="mb-6">
               Despite many improved rice varieties being released annually, complex bottlenecks mean few reach farmers at scale. SAN exists to unite diverse stakeholders, foster smart partnerships, and use data-driven approaches to strengthen seed delivery, adoption, and positive impacts for farming communities.
@@ -125,7 +125,7 @@ const AboutSAN = () => {
       >
         <div className="max-w-4xl mx-auto px-4 text-center">
           <h2 className="text-xl md:text-2xl font-parkinsans font-semibold mb-3 text-green-700">
-            Join the Movement
+            Join the Network
           </h2>
           <p className="mb-6 font-Nunito">
             SAN welcomes voluntary participation from seed corporations, research organizations, farmer producer companies, NGOs, and private sector innovators. Together, let’s accelerate progress and turn advancements in plant breeding into real benefits for communities across South Asia.

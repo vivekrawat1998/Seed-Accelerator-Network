@@ -69,7 +69,7 @@ const RegistrationForm = () => {
                         <input type="email" className="w-full border border-green-200 rounded-lg py-2 px-3 bg-slate-50" required />
                     </div>
                     <div>
-                        <label className="block font-medium text-gray-700 mb-1">Register As</label>
+                        <label className="block font-medium text-gray-700 mb-1">Register As Accelerator</label>
                         <select
                             className="w-full border border-green-200 rounded-lg py-2 px-3 bg-slate-50"
                             required
@@ -165,7 +165,7 @@ const RegistrationForm = () => {
                     </div>
                     <label className="flex items-center space-x-2 text-sm">
                         <input type="checkbox" required className="accent-green-600" />
-                        <span>I agree</span>
+                        <span>I agree to the terms and conditions</span>
                     </label>
                 </fieldset>
 

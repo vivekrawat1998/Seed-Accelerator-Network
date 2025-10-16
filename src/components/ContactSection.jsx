@@ -30,7 +30,7 @@ export default function ContactSection() {
                         Get In Touch
                     </button>
                     <h2 className="text-3xl md:text-4xl font-parkinsans font-bold text-[#0d2317] mb-8">
-                        Need Organic Products?
+                        Need New and Improved Varieties?a
                         <br />
                         Contact Us Now.
                     </h2>

@@ -147,7 +147,7 @@ export default function RiceSectionsCombined() {
 
         className="max-w-4xl mx-auto text-center mb-16" data-aos="fade-down">
         <h1 style={{ color: TEXT_COLOR }} className="text-2xl md:text-5xl font-parkinsans font-extrabold mb-3">
-          Revoluation in Rice Research
+          a	Revolution in Rice Researca
         </h1>
 
       </header>

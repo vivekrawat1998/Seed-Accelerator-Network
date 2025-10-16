@@ -46,7 +46,7 @@ const HeroSection = () => {
             Seeds
           </span>
           <br />
-          <span className="mt-2 block text-green-200">Empower Farms</span>
+          <span className="mt-2 block text-green-200">Improve  Farms</span>
         </h1>
         <p className="mt-6 mb-8 text-lg md:text-xl text-white text-center max-w-2xl  rounded-xl px-4 py-2">
           Revolutionize your farming practice with smart, sustainable, and organic solutions.

@@ -3,7 +3,7 @@ import { FaRegFilePdf } from "react-icons/fa";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import ProfileSection from "../components/Profilesection";
-import profileBg from '/SAM_3.JPG';
+import profileBg from '/resources.webp';
 
 const resources = [
     {

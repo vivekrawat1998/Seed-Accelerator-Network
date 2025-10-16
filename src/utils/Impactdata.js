@@ -104,7 +104,7 @@ const seedDataByYear = [
             { variety: "Swarna Unnat Dhan", Assam: "", Bihar: "", Chhattisgarh: "", Jharkhand: "", Odisha: 100, Telangana: "", WestBengal: "", UttarPradesh: "", GrandTotal: 100 },
             { variety: "Swarna-Sub1", Assam: 40, Bihar: "", Chhattisgarh: "", Jharkhand: "", Odisha: "", Telangana: "", WestBengal: "", UttarPradesh: "", GrandTotal: 40 },
             { variety: "Telangana Sona", Assam: "", Bihar: "", Chhattisgarh: "", Jharkhand: "", Odisha: 20, Telangana: "", WestBengal: 60, UttarPradesh: "", GrandTotal: 80 },
-            { variety: "Tripura Hakchuk 2", Assam: "", Bihar: "", Chhattisgarh: "", Jharkhand: 10, Odisha: 30, Telangana: "", WestBengal: 4, UttarPradesh: "", GrandTotal: 44 },
+            { variety: "Tripura Hakuchuk 2", Assam: "", Bihar: "", Chhattisgarh: "", Jharkhand: 10, Odisha: 30, Telangana: "", WestBengal: 4, UttarPradesh: "", GrandTotal: 44 },
             { variety: "Uttar Ganga", Assam: "", Bihar: "", Chhattisgarh: "", Jharkhand: "", Odisha: "", Telangana: "", WestBengal: "", UttarPradesh: 30, GrandTotal: 30 },
             { variety: "Uttar Lakshmi", Assam: "", Bihar: "", Chhattisgarh: "", Jharkhand: "", Odisha: "", Telangana: "", WestBengal: "", UttarPradesh: 150, GrandTotal: 150 },
             { variety: "Uttar Samir", Assam: "", Bihar: "", Chhattisgarh: "", Jharkhand: "", Odisha: "", Telangana: "", WestBengal: "", UttarPradesh: 30, GrandTotal: 30 },

@@ -36,7 +36,7 @@ const AboutSection = () => (
         SAN was initiated in recognition of persistent challenges in varietal turnover, seed replacement, and dissemination of newly released and primarily public-bred varieties, which often fail to reach their ultimate potential—and farmers—in a timely and effective manner.
       </p>
       {/* Features */}
-      <div className="mb-5">
+      {/* <div className="mb-5">
         <div className="flex flex-row items-center mb-4">
           <div className="bg-green-100 p-2 rounded-full mr-5 flex items-center justify-center">
            <img src="/100-percent-removebg-preview.png" className="w-32 md:w-12 h-12 md:object-contain object-cover" />
@@ -60,7 +60,7 @@ const AboutSection = () => (
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
       {/* CTA Button and Contact */}
       <div className="flex flex-row items-center mt-4 gap-6">
         <a href="/about" className="bg-green-700 text-white font-semibold px-4 py-3 md:px-7  md:py-3 rounded-lg shadow hover:bg-green-800 transition">

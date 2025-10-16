@@ -1,7 +1,7 @@
 import React from 'react'
 import SeedScalingImpact from '../components/impact stoies/SeedScalingImpact'
 import ProfileSection from '../components/Profilesection'
-import profileBg from '/SAM_3.JPG'
+import profileBg from '/jasmine-rice.webp'
 import VarietiesScalingSnapshot from '../components/impact stoies/Snapshot'
 import VarietalTurnoverImpact from '../components/impact stoies/TurnOver'
 import EconomicValueSection from '../components/impact stoies/Empactvalue'
