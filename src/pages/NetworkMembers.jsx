@@ -48,13 +48,11 @@ const NetworkMembersFootprintsPage = () => {
 
   return (
     <div className="bg-white to-slate-100 min-h-screen py-12 px-2 font-sans">
-
-
       <NetworkMembersHero />
       <DashboardStatsSection />
       <div className="grid md:grid-cols-2 grid-cols-1 md:gap-10 md:px-10 place-items-center ">
         <section className="  md:mt-10 mx-auto mb-20 bg-white rounded-3xl ">
-          <h2 className="md:text-2xl text-lg mb-10 font-bold text-green-800 mb-6 text-center font-parkinsans tracking-wide">Members</h2>
+          <h2 className="md:text-2xl text-lg mb-10 font-bold text-green-800 mb-6 text-center font-parkinsans tracking-wide">Seed Acclerator Network 1.0 Participation</h2>
           <div className="overflow-auto max-h-[500px]  rounded-md">
             <table className="w-full table-auto border-collapse border border-gray-300">
               <thead className="bg-prime text-white font-parkinsans  sticky top-0">
@@ -75,12 +73,12 @@ const NetworkMembersFootprintsPage = () => {
               </tbody>
             </table>
           </div>
-          <div className="w-full grid place-items-center mt-10">
-            <Link to="/network-members#register" className="bg-prime rounded-md px-6 py-2 font-parkinsans cursor-pointer hover:bg-prime/90 text-white font-semibold" >Become a Member</Link>
-          </div>
+
         </section>
         <section className=" mb-20 bg-white md:mt-10 rounded-3xl  ">
-          <h2 className="md:text-2xl text-lg font-parkinsans mb-10 font-bold text-green-800 mb-6 text-center tracking-wide">Breeder </h2>
+          <h2 className="md:text-2xl text-lg font-parkinsans mb-10 font-bold text-green-800 mb-6 text-center tracking-wide">
+            Seed Acclerator Network 2.0 Participation
+          </h2>
           <div className="overflow-auto max-h-[500px] border border-green-300 rounded-md">
             <table className="w-full table-auto border-collapse border border-gray-300">
               <thead className="bg-prime  text-white font-parkinsans sticky top-0">
@@ -101,10 +99,12 @@ const NetworkMembersFootprintsPage = () => {
               </tbody>
             </table>
           </div>
-          <div className="w-full grid place-items-center mt-10">
-            <Link to="/network-members#register" className="bg-yellow-400 rounded-md px-6 py-2 font-parkinsans cursor-pointer hover:bg-yellow-700 text-white font-semibold" >Become a Breeder </Link>
-          </div>
+
         </section>
+
+      </div>
+      <div className="w-full mb-10 grid place-items-center mt-10">
+        <Link to="/network-members#register" className="bg-prime rounded-md animate-bounce px-6 py-2 font-parkinsans cursor-pointer hover:bg-yellow-700 text-white font-semibold" >Become a Member </Link>
       </div>
       <CoolStatsTables />
       <div ref={registrationFormRef}>

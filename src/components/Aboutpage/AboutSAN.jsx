@@ -5,6 +5,9 @@ import 'aos/dist/aos.css';
 // Example photo imports (replace with your images or correct paths)
 import FieldImg from '/field 2.png';
 import TeamImg from '/field3.png';
+import TeamImg1 from '/DSC_0048.JPG';
+import TeamImg2 from '/DSR 2.jpg';
+import TeamImg3 from '/DSR 3.png';
 
 const objectives = [
   "Create a network of all seed scaling and accelerator agencies—public, private, and farmer collectives.",
@@ -91,12 +94,27 @@ const AboutSAN = () => {
             </ul>
           </div>
           <div
-            className="md:w-1/2 order-1 md:order-2 mb-8 md:mb-0"
+            className="md:w-1/2 order-1 md:order-2  grid grid-cols-2 gap-4 mb-8 md:mb-0"
             data-aos="fade-left"
             data-aos-delay="300"
           >
             <img
               src={TeamImg}
+              alt="Team working"
+              className="rounded-xl shadow-lg w-full max-h-72 object-cover"
+            />
+            <img
+              src={TeamImg1}
+              alt="Team working"
+              className="rounded-xl shadow-lg w-full max-h-72 object-cover"
+            />
+            <img
+              src={TeamImg2}
+              alt="Team working"
+              className="rounded-xl shadow-lg w-full max-h-72 object-cover"
+            />
+            <img
+              src={TeamImg3}
               alt="Team working"
               className="rounded-xl shadow-lg w-full max-h-72 object-cover"
             />

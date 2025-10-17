@@ -9,42 +9,42 @@ const workStreams = [
     description:
       "Partnering with IRRI–NARES and agricultural experts to run adaptive trials. We analyze results to share impactful insights for smarter, data-driven strategies.",
     icon: '🔬',
-    image: '/images/research.jpg',
+    image: '/Research Collaboration and Insights.JPG',
   },
   {
     title: "Varietal Deployment and Positioning",
     description:
       "Introducing high-performing rice varieties in areas that benefit most — guided by local demand, adaptability, and environmental suitability.",
     icon: '🚀',
-    image: '/images/deployment.jpg',
+    image: '/Varietal deployment and positioning.JPG',
   },
   {
     title: "Seed System Strengthening",
     description:
       "Empowering farmers with access to improved seeds through awareness campaigns, testing, and validation across multiple regions.",
     icon: '🌾',
-    image: '/images/seedsystem.jpg',
+    image: '/Seed System Strengthening.jpg',
   },
   {
     title: "Market Research and Demand Creation",
     description:
       "Analyzing consumer trends and market needs to support breeding programs and ensure that new varieties match real-world market expectations.",
     icon: '📈',
-    image: '/images/market.jpg',
+    image: '/Market Research and Demand Creation.jpg',
   },
   {
     title: "Knowledge Sharing and Extension",
     description:
       "Hosting training sessions, on-field demonstrations, and awareness drives to promote sustainable farming practices and rice innovation.",
     icon: '📚',
-    image: '/images/knowledge.jpg',
+    image: '/Knowledge Sharing and Extension.JPG',
   },
   {
     title: "Seed Business & Enterprise Development",
     description:
       "Supporting small-scale entrepreneurs and farmer cooperatives in building profitable, scalable seed businesses that sustain rural livelihoods.",
     icon: '💰',
-    image: '/images/enterprise.jpg',
+    image: '/Seed Business & Enterprise Development.JPG',
   },
 ];
 
@@ -94,8 +94,8 @@ const OurWorkDownstairsFlow = () => {
   return (
     <div className="bg-gradient-to-b from-gray-50 to-white py-16 px-4 min-h-screen">
       {/* Intro Section */}
-      <div className="max-w-6xl mx-auto text-center mb-16">
-        <h1 className="text-5xl md:text-6xl font-parkinsans font-extrabold text-green-900 mb-6">
+      <div className="container mx-auto text-center mb-16">
+        <h1 className="text-3xl md:text-6xl font-parkinsans font-extrabold text-green-900 mb-6">
           Our Strategic Work Streams 🌱
         </h1>
         <p className="text-lg md:text-xl font-Nunito text-gray-700 max-w-3xl mx-auto">
